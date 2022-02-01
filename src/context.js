@@ -6,12 +6,14 @@ const AppContext = React.createContext()
 const AppProvider = ({ children }) => {
   const [isSideOpen, setIsSideOpen] = useState(false)
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(false)
+  const [location, setLocation] = useState({})
 
   const openSide = () => {
     setIsSideOpen(true)
   }
 
-  const openSubMenu = () => {
+  const openSubMenu = (text, coord) => {
+    setLocation(coord)
     setIsSubMenuOpen(true)
   }
 
@@ -32,6 +34,7 @@ const AppProvider = ({ children }) => {
         closeSubMenu,
         openSide,
         openSubMenu,
+        location,
       }}
     >
       {children}

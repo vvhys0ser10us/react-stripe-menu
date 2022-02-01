@@ -9,7 +9,6 @@ function App() {
       <Navbar></Navbar>
       <Sidebar></Sidebar>
       <Hero></Hero>
-
       <Submenu></Submenu>
     </>
   )
